@@ -41,3 +41,18 @@ function getComputerChoice() {
 
 console.log(getComputerChoice());
 
+const rockButton = document.querySelector("#rock");
+const paperButton = document.querySelector("#paper");
+const scissorsButton = document.querySelector("#scissors")
+
+rockButton.addEventListener("click", function() {
+    return "ROCK";
+});
+
+paperButton.addEventListener("click", function() {
+    return "PAPER";
+});
+
+scissorsButton.addEventListener("click", function() {
+    return "SCISSORS";
+});
