@@ -29,55 +29,66 @@
 //      reset all values to start
 
 
+let computerChoice = getComputerChoice();
 function getComputerChoice() {
-    let choice = Math.floor(Math.random() * 3);
-    if (choice === 0) {
+    let choice = Math.floor(Math.random() * (3-1 + 1) + 1);
+    if (choice === 1) {
+        console.log("ROCK");
         return "ROCK";
-    } else if (choice === 1) {
-        return "PAPER";
     } else if (choice === 2) {
+        console.log("PAPER");
+        return "PAPER";
+    } else if (choice === 3) {
+        console.log("SCISSORS");
         return "SCISSORS";
-    }
+    } else
+    console.log("ERROR");
+    return "ERROR";
 }
-
-console.log(getComputerChoice());
 
 const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors")
 
 
-rockButton.addEventListener("click", function() {
-    // return "ROCK";
-    // console.log("ROCK");
-   if (getComputerChoice() === "ROCK") {
-    return "TIED";
-   } else if (getComputerChoice() === "PAPER") {
-    return "LOSE"; 
-   } else if (getComputerChoice() === "SCISSORS") {
-    return "WIN";
-   }
-});
+function rockBtn() {
+    if (computerChoice === "ROCK") {
+        console.log("A TIE! TRY AGAIN!");
+       } else if (computerChoice === "PAPER") {
+        console.log("YOU LOST! TRY AGAIN!"); 
+       } else if (computerChoice === "SCISSORS") {
+        console.log("YOU WON! KEEP IT UP!");
+       } else
+       console.log("AN ERROR HAS OCCURED");
+}
 
-paperButton.addEventListener("click", function() {
-    if (getComputerChoice() === "PAPER") {
-        return "TIED";
-       } else if (getComputerChoice() === "SCISSORS") {
-        return "LOSE"; 
-       } else if (getComputerChoice() === "ROCK") {
-        return "WIN";
-       }
-});
+rockButton.addEventListener("click", rockBtn);
 
-scissorsButton.addEventListener("click", function() {
-    if (getComputerChoice() === "SCISSORS") {
-        return "TIED";
-       } else if (getComputerChoice() === "ROCK") {
-        return "LOSE"; 
-       } else if (getComputerChoice() === "PAPER") {
-        return "WIN";
-       }
-});
+function paperBtn() {
+    if (computerChoice === "PAPER") {
+        console.log("A TIE! TRY AGAIN!");
+       } else if (computerChoice === "SCISSORS") {
+        console.log("YOU LOST! TRY AGAIN!"); 
+       } else if (computerChoice === "ROCK") {
+        console.log("YOU WON! KEEP IT UP!");
+       } else
+       console.log("ERROR");
+}
+
+paperButton.addEventListener("click", paperBtn);
+
+function scissorsBtn() {
+    if (computerChoice === "SCISSORS") {
+        console.log("A TIE! TRY AGAIN!");
+       } else if (computerChoice === "ROCK") {
+        console.log("YOU LOST! TRY AGAIN!"); 
+       } else if (computerChoice === "PAPER") {
+        console.log("YOU WON! KEEP IT UP!");
+       } else
+       console.log("ERROR");
+}
+
+// scissorsButton.addEventListener("click", scissorsBtn);
 
 // function getHumanChoice() {
 //     if (rockButton.click = true){
